@@ -7,7 +7,6 @@ window1.title("MONEY")
 window1.geometry("1000x1000")
 
 
-
 sinek_As=PhotoImage(file="sinek-As.PNG")
 sinek_2=PhotoImage(file="sinek-2.PNG")
 sinek_3=PhotoImage(file="sinek-3.PNG")
