@@ -69,7 +69,7 @@ def on_hit():
     print("Player Total:",player_total)
     if player_total > 21:
         messagebox.showinfo(title="Game Over", message="Dealer wins! Player busts.")
-        on_deal()
+        reset_game()
 
 def on_stay():
     global dealer_cards,dealer_total
