@@ -118,8 +118,8 @@ def reset_game():
 def on_deal():
     global player_cards, dealer_cards
     reset_game()
-    player_cards = []  # Clear player's cards
-    dealer_cards = []  # Clear dealer's cards
+    player_cards = []
+    dealer_cards = []
     if current_bet > 0:
         for _ in range(2):
             new_card = random.choice(cards)
