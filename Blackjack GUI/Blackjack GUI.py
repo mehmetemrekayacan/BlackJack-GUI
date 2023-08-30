@@ -81,6 +81,7 @@ def on_stay():
         print("dealer Total:",dealer_total)
     determine_winner()
 
+
 def on_entry_click(event):
     if entry_bet.get()=="Enter Bet":
         entry_bet.delete(0,END)
@@ -97,6 +98,10 @@ def on_enter(event):
             money = new_money
             label_money.config(text=f"Money: ${new_money}")
             label_bet.config(text=f"Bet: ${current_bet}")
+            on_deal()
+            button_hit.config(state=NORMAL)
+            button_stay.config(state=NORMAL)
+            button_deal.config(state=NORMAL)
         else:
             messagebox.showerror(title="Logic Error", message="Please Do Not Bet More Than Money.")
     else:
@@ -114,10 +119,15 @@ def reset_game():
     dealer_card_images = []
     player_card_x = 20
     dealer_card_x = 20
+    button_hit.config(state=DISABLED)
+    button_stay.config(state=DISABLED)
+    button_deal.config(state=DISABLED)
 
 def on_deal():
-    global player_cards, dealer_cards
+    global player_cards, dealer_cards, player_total, dealer_total
     reset_game()
+    player_cards = []
+    dealer_cards = []
     if current_bet > 0:
         for _ in range(2):
             new_card = random.choice(cards)
@@ -126,8 +136,9 @@ def on_deal():
         new_card = random.choice(cards)
         dealer_cards.append(new_card)
         show_dealer_card(new_card)
-    else:
-        messagebox.showerror(title="Error", message="Please place a valid bet before dealing.")
+        player_total = calculate_card_total(player_cards)
+        dealer_total = calculate_card_total(dealer_cards)
+
 
 
 label_money=Label(text=f"Money: ${money}",bg="green",font="bold 20",padx=20,pady=20)
@@ -165,6 +176,10 @@ button_stay.grid(column=2,row=3)
 
 button_deal = Button(text="DEAL", padx=10, pady=10, command=on_deal)
 button_deal.grid(column=1, row=3)
+
+button_hit.config(state=DISABLED)
+button_stay.config(state=DISABLED)
+button_deal.config(state=DISABLED)
 
 def determine_winner():
     global dealer_total, player_total, money, current_bet
