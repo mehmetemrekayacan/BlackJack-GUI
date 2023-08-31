@@ -8,4 +8,4 @@
 
 **You draw a card to your dealer with the stay button.**
 
-##🍀Good Luck🍀
+## 🍀Good Luck🍀
