@@ -7,3 +7,5 @@
 **You draw cards to yourself with the hit button.**
 
 **You draw a card to your dealer with the stay button.**
+
+##🍀Good Luck🍀
