@@ -149,11 +149,11 @@ label_bet=Label(text="Bet: $",bg="green",font="bold 20",padx=20,pady=20)
 label_bet.grid(column=2,row=0)
 
 label_enter=Label(text="Click The Enter",bg="green",font="bold 10")
-label_enter.place(x=535,y=57)
+label_enter.place(x=485,y=57)
 
 entry_bet=Entry(width=8,font="bold 10")
 entry_bet.insert(END,"Enter Bet")
-entry_bet.place(x=470,y=57)
+entry_bet.place(x=420,y=57)
 entry_bet.bind("<FocusIn>", on_entry_click)
 entry_bet.bind("<Return>", on_enter)
 
