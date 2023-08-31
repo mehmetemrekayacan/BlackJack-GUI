@@ -8,6 +8,8 @@
 
 **You draw a card to your dealer with the stay button.**
 
+**If your money is 0, the game is over.**
+
 ## 🍀Good Luck🍀
 
 **Since it works with the random module, there is no problem in playing only with the clubs deck.**
