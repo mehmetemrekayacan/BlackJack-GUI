@@ -9,3 +9,5 @@
 **You draw a card to your dealer with the stay button.**
 
 ## 🍀Good Luck🍀
+
+**Since it works with the random module, there is no problem in playing only with the clubs deck.**
