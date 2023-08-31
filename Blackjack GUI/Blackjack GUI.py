@@ -104,7 +104,6 @@ def on_enter(event):
             on_deal()
             button_hit.config(state=NORMAL)
             button_stay.config(state=NORMAL)
-            button_deal.config(state=NORMAL)
         else:
             messagebox.showerror(title="Logic Error", message="Please Do Not Bet More Than Money.")
     else:
@@ -124,7 +123,6 @@ def reset_game():
     dealer_card_x = 20
     button_hit.config(state=DISABLED)
     button_stay.config(state=DISABLED)
-    button_deal.config(state=DISABLED)
 
 def on_deal():
     global player_cards, dealer_cards, player_total, dealer_total
@@ -177,12 +175,8 @@ button_hit.grid(column=0,row=3)
 button_stay=Button(text="STAY",padx=10,pady=10,command=on_stay)
 button_stay.grid(column=2,row=3)
 
-button_deal = Button(text="DEAL", padx=10, pady=10, command=on_deal)
-button_deal.grid(column=1, row=3)
-
 button_hit.config(state=DISABLED)
 button_stay.config(state=DISABLED)
-button_deal.config(state=DISABLED)
 
 def determine_winner():
     global dealer_total, player_total, money, current_bet
@@ -210,6 +204,5 @@ def determine_winner():
         window.quit()
     else:
         on_deal()
-
 
 window.mainloop()
