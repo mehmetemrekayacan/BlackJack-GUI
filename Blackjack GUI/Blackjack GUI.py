@@ -70,6 +70,9 @@ def on_hit():
     if player_total > 21:
         messagebox.showinfo(title="Game Over", message="Dealer wins! Player busts.")
         reset_game()
+        if money <= 0:
+            messagebox.showinfo(title="Game Over", message="You lost! Your money reached 0.")
+            window.quit()
 
 def on_stay():
     global dealer_cards,dealer_total
@@ -202,7 +205,11 @@ def determine_winner():
     current_bet = 0
     label_money.config(text=f"Money: ${money}")
     label_bet.config(text=f"Bet: ${current_bet}")
-    on_deal()
+    if money <= 0:
+        messagebox.showinfo(title="Game Over", message="You lost! Your money reached 0.")
+        window.quit()
+    else:
+        on_deal()
 
 
 window.mainloop()
